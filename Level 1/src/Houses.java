@@ -48,9 +48,6 @@ public class Houses {
 		Tortoise.move(40);
 		Tortoise.turn(90);
 		Tortoise.move(height);
-		if (h.equals("small")) {
-			pointyhouse();
-		}
 
 	}
 }
