@@ -24,12 +24,7 @@ public class Houses {
 		}
 	}
 
-	private static void pointyhouse() {
-		Tortoise.move(100);
-		Tortoise.turn(45);
-		Tortoise.turn(90);
-		Tortoise.move(100);
-	}
+	
 
 	private static void house(String h, Color color) {
 		int height = 0;
