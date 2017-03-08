@@ -1,3 +1,6 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -9,7 +12,7 @@ import javax.swing.JTextField;
 
 //--------------------------------------------------------------------
 
-public class PigLatinTranslator {
+public class PigLatinTranslator implements ActionListener {
 	JFrame frame;
 	JPanel panel;
 	JTextField field;
@@ -40,7 +43,7 @@ public class PigLatinTranslator {
 	}
 
 	/**
-	 * Method to translate a sentence word by word.
+	 * Method to translate a sentence word by word. t
 	 * 
 	 * @param s
 	 *            The sentence in English
@@ -74,18 +77,29 @@ public class PigLatinTranslator {
 		return latin;
 	}
 
+	public static void main(String[] args) {
+		PigLatinTranslator piglatintranslator = new PigLatinTranslator();
+	}
+
 	PigLatinTranslator() {
+		frame = new JFrame();
+		panel = new JPanel();
+		field = new JTextField();
+		field2 = new JTextField();
+		button1 = new JButton();
 		frame.add(panel);
 		panel.add(field);
 		panel.add(button1);
 		panel.add(field2);
+		button1.setText("Translate");
+		field.setText(" ");
+		field2.setText(" ");
+		field.setColumns(10);
+		field2.setColumns(10);
+		button1.addActionListener(this);
 		frame.setVisible(true);
 		frame.pack();
 
-	}
-
-	public static void main(String[] args) {
-		PigLatinTranslator piglatintranslator = new PigLatinTranslator();
 	}
 
 	/**
@@ -102,6 +116,15 @@ public class PigLatinTranslator {
 					|| word.charAt(i) == 'u')
 				return i;
 		return 0;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getSource() == button1) {
+			String translated = translate(field.getText());
+			field2.setText(translated);
+		}
 	}
 
 }
