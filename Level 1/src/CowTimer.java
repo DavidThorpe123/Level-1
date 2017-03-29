@@ -40,7 +40,7 @@ public class CowTimer {
 		 * your default package. Tell the students (by speaking) it's time to
 		 * walk.
 		 */
-		cowtimer.finalize();
+		// CowTimer.finalize();
 	}
 
 	private void playSound(String fileName) {
