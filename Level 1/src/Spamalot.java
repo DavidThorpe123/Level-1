@@ -88,7 +88,7 @@ public class Spamalot implements ActionListener {
 			sendSpam("kidgamingservice@gmail.com", "Spammed", "#Hacked by a spammer xD", 50);
 		}
 		// TODO Auto-generated method stub
-		if()
+
 	}
 
 	String sendTextMessage(String phoneNumber, String message, int spamAmount) {
