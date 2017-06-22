@@ -124,4 +124,5 @@ public class SimpleCalculator implements ActionListener {
 		String answerrrr = Integer.toString(num1 - num2);
 		return answerrrr;
 	}
+
 }
