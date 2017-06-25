@@ -6,18 +6,28 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 public class Timer implements ActionListener {
 	JFrame frame;
 	JPanel panel;
 	JButton button;
 	JButton startbutton;
+	JTextArea area;
+
+	public String myString() {
+		String question = JOptionPane.showInputDialog(null, "Number of Seconds?");
+		int question2 = Integer.parseInt(question);
+		String question3 = Integer.toString(question2);
+		return question3;
+	}
 
 	Timer() {
 		frame = new JFrame();
 		panel = new JPanel();
 		startbutton = new JButton();
 		button = new JButton();
+		area = new JTextArea();
 
 		Dimension big = new Dimension(400, 400);
 		Dimension frameSize = new Dimension(750, 750);
@@ -43,9 +53,7 @@ public class Timer implements ActionListener {
 
 		// TODO Auto-generated method stub
 		if (arg0.getSource() == button) {
-			String question = JOptionPane.showInputDialog(null, "Number of Seconds?");
-			int question2 = Integer.parseInt(question);
-			System.out.println(question2);
+			System.out.println(myString());
 		}
 		if (arg0.getSource() == startbutton) {
 

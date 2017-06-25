@@ -5,6 +5,7 @@ import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class typingtutor implements KeyListener {
@@ -13,10 +14,20 @@ public class typingtutor implements KeyListener {
 	JPanel panel;
 
 	int score;
+
 	char currentletter = generateRandomLetter();
 
 	public static void main(String[] args) {
 		typingtutor t = new typingtutor();
+		int time = 60;
+		for (int i = 59; i < time; i -= 1) {
+			System.out.println(i);
+			if (i == 0) {
+				JOptionPane.showMessageDialog(null, "You're WPM is");
+				System.exit(1);
+			}
+		}
+
 	}
 
 	typingtutor() {

@@ -136,8 +136,11 @@ public class SimpleCalculator implements ActionListener {
 	public String squaree() {
 		input.getText();
 		int num1 = Integer.parseInt(input.getText());
+		inputwo.getText();
+		int num2 = Integer.parseInt(inputwo.getText());
 		String answerrrrr = Integer.toString(num1 * num1);
 		return answerrrrr;
+
 	}
 
 }
