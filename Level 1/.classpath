@@ -2,17 +2,5 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="lib/league-jars/commons-logging-1.1.3-2.jar"/>
-	<classpathentry kind="lib" path="lib/league-jars/core.jar"/>
-	<classpathentry kind="lib" path="lib/league-jars/gridworld.jar"/>
-	<classpathentry kind="lib" path="lib/league-jars/javazoom.jar"/>
-	<classpathentry kind="lib" path="lib/league-jars/mail.jar"/>
-	<classpathentry kind="lib" path="lib/league-jars/robot.jar"/>
-	<classpathentry kind="lib" path="lib/league-jars/Robot2.0.jar"/>
-	<classpathentry kind="lib" path="lib/league-jars/RobotMaker.jar"/>
-	<classpathentry kind="lib" path="lib/league-jars/sports.jar"/>
-	<classpathentry kind="lib" path="lib/league-jars/TeachingKidsProgramming - unicorn.jar"/>
-	<classpathentry kind="lib" path="lib/league-jars/Tortoise.jar"/>
-	<classpathentry kind="lib" path="lib/league-jars/twitter4j-core-3.0.5-2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
