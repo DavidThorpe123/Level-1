@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
@@ -13,6 +14,7 @@ public class StartScreen implements ActionListener {
 	JPanel panel;
 	JButton startbutton;
 	JButton startbuttontimer;
+	JButton helpbutton;
 	JTextArea area;
 
 	public StartScreen() {
@@ -20,6 +22,7 @@ public class StartScreen implements ActionListener {
 		panel = new JPanel();
 		startbutton = new JButton();
 		startbuttontimer = new JButton();
+		helpbutton = new JButton();
 
 		GridLayout grid = new GridLayout(2, 0);
 		Dimension framesize = new Dimension(400, 400);
@@ -30,13 +33,16 @@ public class StartScreen implements ActionListener {
 		startbutton.setText("Start Calculator");
 		startbutton.addActionListener(this);
 		startbuttontimer.addActionListener(this);
-
+		helpbutton.setPreferredSize(Big);
+		helpbutton.setText("Help");
+		helpbutton.addActionListener(this);
 		frame.add(panel);
 		frame.setLayout(grid);
 		frame.setTitle("Utilities");
 
 		panel.add(startbutton);
 		panel.add(startbuttontimer);
+		panel.add(helpbutton);
 		frame.setVisible(true);
 		frame.setSize(framesize);
 
@@ -52,6 +58,14 @@ public class StartScreen implements ActionListener {
 		if (e.getSource() == startbutton) {
 			SimpleCalculator.main(null);
 		}
+		if (e.getSource() == startbuttontimer) {
+			Timer.main(null);
+		}
+		if (e.getSource() == helpbutton) {
+			JOptionPane.showMessageDialog(frame,
+					"This program is designed to give you everyday utilities you need! To get started simply press on of the button have the utilities.");
+		}
+
 	}
 
 }

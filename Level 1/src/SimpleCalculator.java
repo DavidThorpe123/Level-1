@@ -16,6 +16,7 @@ public class SimpleCalculator implements ActionListener {
 	JButton multiply;
 	JButton divide;
 	JButton square;
+	JButton backbutton;
 	JPanel jpanel;
 	JTextField input;
 	JTextField inputwo;
@@ -29,6 +30,7 @@ public class SimpleCalculator implements ActionListener {
 		sub = new JButton();
 		divide = new JButton();
 		square = new JButton();
+		backbutton = new JButton();
 		jframe = new JFrame();
 		input = new JTextField("First Text");
 		inputwo = new JTextField("Second Text");
@@ -49,6 +51,9 @@ public class SimpleCalculator implements ActionListener {
 		jframe.add(jpanel);
 		jframe.add(buttons);
 		jframe.add(answers);
+		jframe.add(backbutton);
+		backbutton.addActionListener(this);
+		backbutton.setText("Back");
 		jbutton.setText("Add");
 		sub.setText("Subtract");
 		multiply.setText("Multiply");
@@ -91,6 +96,9 @@ public class SimpleCalculator implements ActionListener {
 		}
 		if (e.getSource() == square) {
 			answer.setText(squaree());
+		}
+		if (e.getSource() == backbutton) {
+			StartScreen.main(null);
 		}
 	}
 
