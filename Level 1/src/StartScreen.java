@@ -28,9 +28,12 @@ public class StartScreen implements ActionListener {
 		startbuttontimer.setText("Start Timer");
 		startbutton.setPreferredSize(Big);
 		startbutton.setText("Start Calculator");
+		startbutton.addActionListener(this);
+		startbuttontimer.addActionListener(this);
 
 		frame.add(panel);
 		frame.setLayout(grid);
+		frame.setTitle("Utilities");
 
 		panel.add(startbutton);
 		panel.add(startbuttontimer);
@@ -46,7 +49,9 @@ public class StartScreen implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-
+		if (e.getSource() == startbutton) {
+			SimpleCalculator.main(null);
+		}
 	}
 
 }
