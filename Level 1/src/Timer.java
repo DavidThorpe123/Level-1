@@ -14,6 +14,7 @@ public class Timer implements ActionListener {
 	JButton button;
 	JButton startbutton;
 	JTextField field;
+	JButton backbutton;
 	boolean hasSetNumber = false;
 
 	Timer() {
@@ -22,12 +23,16 @@ public class Timer implements ActionListener {
 		startbutton = new JButton();
 		button = new JButton();
 		field = new JTextField();
+		backbutton = new JButton();
 
 		Dimension big = new Dimension(400, 400);
 		Dimension frameSize = new Dimension(750, 750);
 		panel.add(startbutton);
 		frame.add(panel);
 		panel.add(button);
+		panel.add(backbutton);
+		backbutton.setText("Back");
+		backbutton.addActionListener(this);
 		field.setText("                    ");
 		panel.add(field);
 		button.setSize(big);
@@ -60,6 +65,10 @@ public class Timer implements ActionListener {
 			JOptionPane.showMessageDialog(frame, "Choose a number!");
 		} else if (arg0.getSource() == startbutton && hasSetNumber == true) {
 
+		}
+		if (arg0.getSource() == backbutton) {
+
+			StartScreen.main(null);
 		}
 	}
 
