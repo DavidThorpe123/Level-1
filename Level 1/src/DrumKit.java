@@ -20,8 +20,10 @@ import javax.swing.JPanel;
 public class DrumKit extends MouseAdapter implements ActionListener {
 
 	JLabel[] drumLabelWithImage;
-	String drums[] = { "snare.jpg" };
+
+	String drums[] = { "snare.jpg", "kick.jpg" };
 	int i = 0;
+	int l = 1;
 
 	public static void main(String[] args) throws Exception {
 		new DrumKit().getGoing();
@@ -32,14 +34,16 @@ public class DrumKit extends MouseAdapter implements ActionListener {
 		drumLabelWithImage = new JLabel[drums.length];
 		// 1. Make a JFrame variable and initialize it using "new JFrame()"
 		JFrame frame = new JFrame();
+
 		// 2. Make the frame visible
-		frame.setVisible(true);
+
 		// 3. Set the size of the frame
 		frame.setSize(750, 500);
 		// 4. Set the title of the frame
 		frame.setTitle("DrumKit");
 		// 5. Make a JPanel and initialize it.
 		JPanel panel = new JPanel();
+
 		// 6. Add the panel to the frame. (The panel is invisible.)
 		frame.add(panel);
 		// 7. Download an image of a drum from the Internet. Drop it into your
@@ -48,23 +52,32 @@ public class DrumKit extends MouseAdapter implements ActionListener {
 
 		// 9. Edit the next line to use your String variable
 		// drumLabelWithImage = createLabelImage(drumImageString);
+		panel.setLayout(new GridLayout());
 
 		// 10. Add the image to the panel
 		for (int j = 0; j < drumLabelWithImage.length; j++) {
 			drumLabelWithImage[j] = createLabelImage(drums[j]);
 			drumLabelWithImage[j].addMouseListener(this);
+
 		}
-		frame.add(drumLabelWithImage[i]);
+		panel.add(drumLabelWithImage[i]);
+		panel.add(drumLabelWithImage[l]);
 
 		// 11. Set the layout of the panel to "new GridLayout()"
-		panel.setLayout(new GridLayout());
 		// 12. call the pack() method on the frame
 		frame.pack();
+		frame.setVisible(true);
 		// 13. add a mouse listener to drumLabelWithImage.
 
 	}
 
 	public void mouseClicked(MouseEvent e) {
+
+		if (e.getSource() == drumLabelWithImage[l]) {
+			playSound("kick.wav");
+		} else {
+			playSound("snare.wav");
+		}
 		// 14. When the mouse is clicked, print "mouse clicked"
 		System.out.println("mouse");
 		JLabel drumClicked = (JLabel) e.getSource();
